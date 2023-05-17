@@ -1,0 +1,156 @@
+SELECT * FROM brand;
+SELECT * FROM model;
+
+-- Select data that are related in both tables
+SELECT * FROM brand b INNER JOIN model m ON b.id = m.brand_id;
+
+-- ID BRAND_NAME                        ID MODEL_NAME                  BRAND_ID
+-- -- ------------------------- ---------- ------------------------- ----------
+-- 10 BMW                               11 530e                              10
+-- 10 BMW                               12 330e                              10
+-- 10 BMW                               13 330i                              10
+-- 10 BMW                               14 118i                              10
+-- 10 BMW                               15 i3                                10
+-- 10 BMW                               16 i8                                10
+-- 10 BMW                               17 x1                                10
+-- 10 BMW                               18 x2                                10
+-- 10 BMW                               19 x3                                10
+-- 50 PORSCHE                           51 911                               50
+-- 50 PORSCHE                           52 TAYCAN                            50
+-- 50 PORSCHE                           53 MACAN                             50
+-- 50 PORSCHE                           54 PANAMERA                          50
+-- 50 PORSCHE                           55 718                               50
+-- 50 PORSCHE                           56 CAYENNE                           50
+-- 50 PORSCHE                           57 935                               50
+-- 50 PORSCHE                           58 918                               50
+-- 90 BUGATTI                           91 CHIRON                            90
+-- 90 BUGATTI                           92 VEYRON                            90
+-- 90 BUGATTI                           93 EB110                             90
+-- 90 BUGATTI                           94 CENTODIECI                        90
+-- 90 BUGATTI                           95 MISTRAL                           90
+-- 90 BUGATTI                           96 DIVO                              90
+-- 90 BUGATTI                           97 LA VOITURE NOIRE                  90                                                        90
+
+-- Select all data from brand table and the related data from model table
+SELECT * FROM brand b LEFT JOIN model m ON b.id = m.brand_id;
+
+-- ID BRAND_NAME                        ID MODEL_NAME                  BRAND_ID
+-- -- ------------------------- ---------- ------------------------- ----------
+-- 10 BMW                               11 530e                              10
+-- 10 BMW                               12 330e                              10
+-- 10 BMW                               13 330i                              10
+-- 10 BMW                               14 118i                              10
+-- 10 BMW                               15 i3                                10
+-- 10 BMW                               16 i8                                10
+-- 10 BMW                               17 x1                                10
+-- 10 BMW                               18 x2                                10
+-- 10 BMW                               19 x3                                10
+-- 50 PORSCHE                           51 911                               50
+-- 50 PORSCHE                           52 TAYCAN                            50
+-- 50 PORSCHE                           53 MACAN                             50
+-- 50 PORSCHE                           54 PANAMERA                          50
+-- 50 PORSCHE                           55 718                               50
+-- 50 PORSCHE                           56 CAYENNE                           50
+-- 50 PORSCHE                           57 935                               50
+-- 50 PORSCHE                           58 918                               50
+-- 90 BUGATTI                           91 CHIRON                            90
+-- 90 BUGATTI                           92 VEYRON                            90
+-- 90 BUGATTI                           93 EB110                             90
+-- 90 BUGATTI                           94 CENTODIECI                        90
+-- 90 BUGATTI                           95 MISTRAL                           90
+-- 90 BUGATTI                           96 DIVO                              90
+-- 90 BUGATTI                           97 LA VOITURE NOIRE                  90
+-- 40 SSANGYONG                         -- RETUNED BECAUSE IT IS A LEFT JOIN
+-- 30 CHEVROLET                         -- RETUNED BECAUSE IT IS A LEFT JOIN
+-- 70 CITROEN                           -- RETUNED BECAUSE IT IS A LEFT JOIN
+-- 20 HYUNDAI                           -- RETUNED BECAUSE IT IS A LEFT JOIN
+-- 60 PAGANI                            -- RETUNED BECAUSE IT IS A LEFT JOIN
+-- 80 VOLKSWAGEN                        -- RETUNED BECAUSE IT IS A LEFT JOIN
+
+-- Select all data from model table and the related data from the brand table
+SELECT * FROM brand b RIGHT JOIN model m ON b.id = m.brand_id;  
+
+-- ID BRAND_NAME                        ID MODEL_NAME                  BRAND_ID
+-- -- ------------------------- ---------- ------------------------- ----------
+-- 10 BMW                               11 530e                              10
+-- 10 BMW                               12 330e                              10
+-- 10 BMW                               13 330i                              10
+-- 10 BMW                               14 118i                              10
+-- 10 BMW                               15 i3                                10
+-- 10 BMW                               16 i8                                10
+-- 10 BMW                               17 x1                                10
+-- 10 BMW                               18 x2                                10
+-- 10 BMW                               19 x3                                10
+-- 50 PORSCHE                           51 911                               50
+-- 50 PORSCHE                           52 TAYCAN                            50
+-- 50 PORSCHE                           53 MACAN                             50
+-- 50 PORSCHE                           54 PANAMERA                          50
+-- 50 PORSCHE                           55 718                               50
+-- 50 PORSCHE                           56 CAYENNE                           50
+-- 50 PORSCHE                           57 935                               50
+-- 50 PORSCHE                           58 918                               50
+-- 90 BUGATTI                           91 CHIRON                            90
+-- 90 BUGATTI                           92 VEYRON                            90
+-- 90 BUGATTI                           93 EB110                             90
+-- 90 BUGATTI                           94 CENTODIECI                        90
+-- 90 BUGATTI                           95 MISTRAL                           90
+-- 90 BUGATTI                           96 DIVO                              90
+-- 90 BUGATTI                           97 LA VOITURE NOIRE                  90
+-- RIGHT JOIN EFFECT        -->        101 458 SPECIALE                     100
+-- RIGHT JOIN EFFECT        -->        102 488 PISTA                        100
+-- RIGHT JOIN EFFECT        -->        103 LAFERRARI                        100
+-- RIGHT JOIN EFFECT        -->        104 599 GTO                          100
+-- RIGHT JOIN EFFECT        -->        105 360 CHALLENGE STRADALE           100
+-- RIGHT JOIN EFFECT        -->        106 812 COMPETIZIONE                 100
+-- RIGHT JOIN EFFECT        -->        106 430 SCUDERIA                     100
+-- RIGHT JOIN EFFECT        -->        106 F12 TDF                          100
+-- RIGHT JOIN EFFECT        -->        106 F40                              100
+-- RIGHT JOIN EFFECT        -->        106 F50                              100
+-- RIGHT JOIN EFFECT        -->        106 ENZO                             100
+
+-- Select all data from both tables --> brand and model
+-- SELECT * FROM brand b FULL OUTER JOIN model m ON b.id = m.brand_id;
+
+-- ID BRAND_NAME                        ID MODEL_NAME                  BRAND_ID
+-- -- ------------------------- ---------- ------------------------- ----------
+-- 10 BMW                               11 530e                              10
+-- 10 BMW                               12 330e                              10
+-- 10 BMW                               13 330i                              10
+-- 10 BMW                               14 118i                              10
+-- 10 BMW                               15 i3                                10
+-- 10 BMW                               16 i8                                10
+-- 10 BMW                               17 x1                                10
+-- 10 BMW                               18 x2                                10
+-- 10 BMW                               19 x3                                10
+-- 50 PORSCHE                           51 911                               50
+-- 50 PORSCHE                           52 TAYCAN                            50
+-- 50 PORSCHE                           53 MACAN                             50
+-- 50 PORSCHE                           54 PANAMERA                          50
+-- 50 PORSCHE                           55 718                               50
+-- 50 PORSCHE                           56 CAYENNE                           50
+-- 50 PORSCHE                           57 935                               50
+-- 50 PORSCHE                           58 918                               50
+-- 90 BUGATTI                           91 CHIRON                            90
+-- 90 BUGATTI                           92 VEYRON                            90
+-- 90 BUGATTI                           93 EB110                             90
+-- 90 BUGATTI                           94 CENTODIECI                        90
+-- 90 BUGATTI                           95 MISTRAL                           90
+-- 90 BUGATTI                           96 DIVO                              90
+-- 90 BUGATTI                           97 LA VOITURE NOIRE                  90
+--     Full join effect -->            101 458 SPECIALE                     100
+--     Full join effect -->            102 488 PISTA                        100
+--     Full join effect -->            103 LAFERRARI                        100
+--     Full join effect -->            104 599 GTO                          100
+--     Full join effect -->            105 360 CHALLENGE STRADALE           100
+--     Full join effect -->            106 812 COMPETIZIONE                 100
+--     Full join effect -->            106 430 SCUDERIA                     100
+--     Full join effect -->            106 F12 TDF                          100
+--     Full join effect -->            106 F40                              100
+--     Full join effect -->            106 F50                              100
+--     Full join effect -->            106 ENZO                             100
+-- 40 SSANGYONG         <-- Full join effect      
+-- 30 CHEVROLET         <-- Full join effect
+-- 70 CITREN            <-- Full join effect
+-- 20 HYUNDAI           <-- Full join effect
+-- 60 PAGANI            <-- Full join effect
+-- 80 VOLKSWAGEN        <-- Full join effect
