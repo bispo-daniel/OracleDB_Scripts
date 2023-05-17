@@ -109,7 +109,7 @@ SELECT * FROM brand b RIGHT JOIN model m ON b.id = m.brand_id;
 -- RIGHT JOIN EFFECT        -->        106 ENZO                             100
 
 -- Select all data from both tables --> brand and model
--- SELECT * FROM brand b FULL OUTER JOIN model m ON b.id = m.brand_id;
+SELECT * FROM brand b FULL OUTER JOIN model m ON b.id = m.brand_id;
 
 -- ID BRAND_NAME                        ID MODEL_NAME                  BRAND_ID
 -- -- ------------------------- ---------- ------------------------- ----------
